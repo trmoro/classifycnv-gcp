@@ -53,17 +53,14 @@ def compute_acmg(batch_id, genomics_coordinates):
 		dupdel = "DUP"
 		if q["type"] == "loss":
 			dupdel = "DEL"
-		logger.log_text(q["chr"] + "\t" + str(q["start"]) + "\t" + str(q["end"]) + "\t" + dupdel + "\n")
 		f.write(q["chr"] + "\t" + str(q["start"]) + "\t" + str(q["end"]) + "\t" + dupdel + "\n")
 	f.close()
 	
 	ref = genomics_coordinates[0]["ref"]
 
-	logger.log_text("NCNV : " + str(len(genomics_coordinates)))
-
 	#Execute ClassifyCNV and convert result to regular dict
 	os.system("python ClassifyCNV.py --infile /tmp/" + batch_id + ".bed --GenomeBuild " + ref + " --outdir /tmp/" + batch_id)
-	if os.path.isfile("/tmp/Results/Scoresheet.txt"):
+	if os.path.isfile("/tmp/" + batch_id + "/Scoresheet.txt"):
 		with open("/tmp/" + batch_id + "/Scoresheet.txt") as csvfile:
 			csvreader = csv.DictReader(csvfile, delimiter="\t")
 			results = []
