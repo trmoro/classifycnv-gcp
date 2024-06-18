@@ -15,7 +15,7 @@ logger.log_text("ClassifyCNV MongoDB connection opened")
 #Save to Mongo, made
 def save(title,row):
 	filt = {"title": title}
-	db["classifycnv"].replace_one(filt , row, upsert=True)
+	db["classifycnv"].replace_one(filt , row)
 	logger.log_text(title + " ClassifyCNV value updated !")
 
 #Convert Row to ACMG object
