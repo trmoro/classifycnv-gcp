@@ -1,9 +1,6 @@
 import os
 import csv
 import time
-import shutil
-
-from coordinates import GenomicCoordinates
 
 #Logger
 from google.cloud import logging
@@ -48,18 +45,18 @@ def row2acmg(title, row):
 	}
 
 #Compute ACMG
-def compute_acmg(batch_id, genomics_coordinates : GenomicCoordinates):
+def compute_acmg(batch_id, genomics_coordinates):
 
 	#Write bed file
 	f = open("/tmp/" + batch_id + ".bed",'w')
 	for q in genomics_coordinates:
 		dupdel = "DUP"
-		if q.type == "loss":
+		if q["type"] == "loss":
 			dupdel = "DEL"
-		f.write(q.chr + "\t" + str(q.start) + "\t" + str(q.end) + "\t" + dupdel + "\n")
+		f.write(q["chr"] + "\t" + str(q["start"]) + "\t" + str(q["end"]) + "\t" + dupdel + "\n")
 	f.close()
 	
-	ref = genomics_coordinates[0].ref
+	ref = genomics_coordinates[0]["ref"]
 
 	#Execute ClassifyCNV and convert result to regular dict
 	os.system("python ClassifyCNV.py --infile /tmp/" + batch_id + ".bed --GenomeBuild " + ref + " --outdir /tmp/" + batch_id)
@@ -86,10 +83,10 @@ app = Flask(__name__)
 
 @app.route("/batch", methods=["GET"])
 def batch():
+	t = time.time()
 	logger.log_text("ClassifyCNV Batch")
 	batch_id = request.args.get("batch-id")
 	batch_data = db["cnvhub_batch"].find_one({'batchId':batch_id})["genomicCoordinates"]
-	print(batch_data) 
 	compute_acmg(batch_id, batch_data)
 	logger.log_text(round(time.time() - t,2),"ClassifyCNV CNV-Hub finished !")
 	return {"text":"ClassifyCNV Batch OK !"}
