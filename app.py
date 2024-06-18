@@ -16,7 +16,7 @@ logger.log_text("ClassifyCNV MongoDB connection opened")
 def save(title,row):
 	filt = {"title": title}
 	db["classifycnv"].replace_one(filt , row, upsert=True)
-	logger.log_text(title + " xcnv value updated !")
+	logger.log_text(title + " ClassifyCNV value updated !")
 
 #Convert Row to ACMG object
 def row2acmg(title, row):
@@ -88,7 +88,7 @@ def batch():
 	batch_id = request.args.get("batch-id")
 	batch_data = db["cnvhub_batch"].find_one({'batchId':batch_id})["genomicCoordinates"]
 	compute_acmg(batch_id, batch_data)
-	logger.log_text(round(time.time() - t,2),"ClassifyCNV CNV-Hub finished !")
+	logger.log_text(str(round(time.time() - t,2)) + " ClassifyCNV CNV-Hub finished !")
 	return {"text":"ClassifyCNV Batch OK !"}
 
 if __name__ == "__main__":
