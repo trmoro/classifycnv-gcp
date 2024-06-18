@@ -68,7 +68,7 @@ def compute_acmg(batch_id, genomics_coordinates):
 				var_type = "loss"
 				if row["Type"] == "DUP":
 					var_type = "gain"
-				title = ref + "-" + row["Chromosome"] + "-" + int(row["Start"]) + "-" + int(row["End"]) + "-" + var_type
+				title = ref + "-" + row["Chromosome"] + "-" + str(row["Start"]) + "-" + str(row["End"]) + "-" + var_type
 				res = row2acmg(title,row)
 				save(title, res)
 			return results
