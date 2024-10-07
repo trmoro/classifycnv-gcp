@@ -32,75 +32,75 @@ def row2acmg(title, row):
 	score = float(row["Total score"])
 	acmg_criteria = []
 	if float(row["1A-B"]) != 0:
-		acmg_criteria.append("1AB " + float(row["1A-B"]))
+		acmg_criteria.append("1AB " + row["1A-B"])
 	if float(row["2A"]) != 0:
-		acmg_criteria.append("2A " + float(row["2A"]))
+		acmg_criteria.append("2A " + row["2A"])
 	if float(row["2B"]) != 0:
-		acmg_criteria.append("2B " + float(row["2B"]))
+		acmg_criteria.append("2B " + row["2B"])
 	if float(row["2C"]) != 0:
-		acmg_criteria.append("2C " + float(row["2C"]))
+		acmg_criteria.append("2C " + row["2C"])
 	if float(row["2D"]) != 0:
-		acmg_criteria.append("2D " + float(row["2D"]))
+		acmg_criteria.append("2D " + row["2D"])
 	if float(row["2E"]) != 0:
-		acmg_criteria.append("2E " + float(row["2E"]))
+		acmg_criteria.append("2E " + row["2E"])
 	if float(row["2F"]) != 0:
-		acmg_criteria.append("2F " + float(row["2F"]))
+		acmg_criteria.append("2F " + row["2F"])
 	if float(row["2G"]) != 0:
-		acmg_criteria.append("2G " + float(row["2G"]))
+		acmg_criteria.append("2G " + row["2G"]))
 	if float(row["2H"]) != 0:
-		acmg_criteria.append("2H " + float(row["2H"]))
+		acmg_criteria.append("2H " + row["2H"])
 	if float(row["2I"]) != 0:
-		acmg_criteria.append("2I " + float(row["2I"]))
+		acmg_criteria.append("2I " + row["2I"])
 	if float(row["2J"]) != 0:
-		acmg_criteria.append("2J " + float(row["2J"]))
+		acmg_criteria.append("2J " + row["2J"])
 	if float(row["2K"]) != 0:
-		acmg_criteria.append("2K " + float(row["2K"]))
+		acmg_criteria.append("2K " + row["2K"])
 	if float(row["2L"]) != 0:
-		acmg_criteria.append("2L " + float(row["2L"]))
+		acmg_criteria.append("2L " + row["2L"])
 	if float(row["3"]) != 0:
-		acmg_criteria.append("3 " + float(row["3"]))
+		acmg_criteria.append("3 " + row["3"])
 	if float(row["4A"]) != 0:
-		acmg_criteria.append("4A " + float(row["4A"]))
+		acmg_criteria.append("4A " + row["4A"])
 	if float(row["4B"]) != 0:
-		acmg_criteria.append("42 " + float(row["4B"]))
+		acmg_criteria.append("42 " + row["4B"])
 	if float(row["4C"]) != 0:
-		acmg_criteria.append("4C " + float(row["4C"]))
+		acmg_criteria.append("4C " + row["4C"])
 	if float(row["4D"]) != 0:
-		acmg_criteria.append("4D " + float(row["4D"]))
+		acmg_criteria.append("4D " + row["4D"])
 	if float(row["4E"]) != 0:
-		acmg_criteria.append("4E " + float(row["4E"]))
+		acmg_criteria.append("4E " + row["4E"])
 	if float(row["4F-H"]) != 0:
-		acmg_criteria.append("4FH " + float(row["4F-H"]))
+		acmg_criteria.append("4FH " + row["4F-H"])
 	if float(row["4I"]) != 0:
-		acmg_criteria.append("4I " + float(row["4I"]))
+		acmg_criteria.append("4I " + row["4I"])
 	if float(row["4J"]) != 0:
-		acmg_criteria.append("4J " + float(row["4J"]))
+		acmg_criteria.append("4J " + row["4J"])
 	if float(row["4K"]) != 0:
-		acmg_criteria.append("4K " + float(row["4K"]))
+		acmg_criteria.append("4K " + row["4K"])
 	if float(row["4L"]) != 0:
-		acmg_criteria.append("4L " + float(row["4L"]))
+		acmg_criteria.append("4L " + row["4L"])
 	if float(row["4M"]) != 0:
-		acmg_criteria.append("4M " + float(row["4M"]))
+		acmg_criteria.append("4M " + row["4M"])
 	if float(row["4N"]) != 0:
-		acmg_criteria.append("4N " + float(row["4N"]))
+		acmg_criteria.append("4N " + row["4N"])
 	if float(row["4O"]) != 0:
-		acmg_criteria.append("4O " + float(row["4O"]))
+		acmg_criteria.append("4O " + row["4O"])
 	if float(row["5A"]) != 0:
-		acmg_criteria.append("5A " + float(row["5A"]))
+		acmg_criteria.append("5A " + row["5A"])
 	if float(row["5B"]) != 0:
-		acmg_criteria.append("5B " + float(row["5B"]))
+		acmg_criteria.append("5B " + row["5B"])
 	if float(row["5C"]) != 0:
-		acmg_criteria.append("5C " + float(row["5C"]))
+		acmg_criteria.append("5C " + row["5C"])
 	if float(row["5D"]) != 0:
-		acmg_criteria.append("5D " + float(row["5D"]))
+		acmg_criteria.append("5D " + row["5D"])
 	if float(row["5E"]) != 0:
-		acmg_criteria.append("5E " + float(row["5E"]))
+		acmg_criteria.append("5E " + row["5E"])
 	if float(row["5F"]) != 0:
-		acmg_criteria.append("5F " + float(row["5F"]))
+		acmg_criteria.append("5F " + row["5F"])
 	if float(row["5G"]) != 0:
-		acmg_criteria.append("5G " + float(row["5G"]))
+		acmg_criteria.append("5G " + row["5G"])
 	if float(row["5H"]) != 0:
-		acmg_criteria.append("5H " + float(row["5H"]))
+		acmg_criteria.append("5H " + row["5H"])
 
 
 	return {"title": title ,"chr":row["Chromosome"],"start":int(row["Start"]),"end":int(row["End"]),"var_type":var_type,
