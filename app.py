@@ -46,7 +46,7 @@ def row2acmg(title, row):
 	if float(row["2F"]) != 0:
 		acmg_criteria.append("2F " + row["2F"])
 	if float(row["2G"]) != 0:
-		acmg_criteria.append("2G " + row["2G"]))
+		acmg_criteria.append("2G " + row["2G"])
 	if float(row["2H"]) != 0:
 		acmg_criteria.append("2H " + row["2H"])
 	if float(row["2I"]) != 0:
