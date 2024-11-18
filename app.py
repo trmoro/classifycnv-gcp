@@ -2,6 +2,8 @@ import os
 import csv
 import time
 
+from bson import ObjectId
+
 #Logger
 from google.cloud import logging
 logging_client = logging.Client()
@@ -171,8 +173,8 @@ def single():
 def batch():
 	t = time.time()
 	logger.log_text("ClassifyCNV Batch")
-	batch_id = request.args.get("batch-id")
-	batch_data = db["cnvhub_batch"].find_one({'batchId':batch_id})["genomicCoordinates"]
+	batch_id = request.args.get("id")
+	batch_data = db["cnvhub_batch"].find_one({'_id':ObjectId(batch_id)})["genomicCoordinates"]
 	compute_acmg(batch_id, batch_data)
 	logger.log_text(str(round(time.time() - t,2)) + " ClassifyCNV CNV-Hub finished !")
 	return {"text":"ClassifyCNV Batch OK !"}
